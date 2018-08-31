@@ -1,0 +1,30 @@
+CREATE SCHEMA `world_les_1` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
+
+
+CREATE TABLE `world_les_1`.`country` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(128) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+
+CREATE TABLE `world_les_1`.`region` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(128) NOT NULL,
+  `country_id` INT NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+
+CREATE TABLE `world_les_1`.`city` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(128) NOT NULL,
+  `country_id` INT NOT NULL,
+  `region_id` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+ 
